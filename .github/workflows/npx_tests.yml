@@ -13,6 +13,6 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: 16
-    - run: npm install -g npx@${{ matrix.npx-version }}
+    - run: npm install --force -g npx@${{ matrix.npx-version }}
     - run: npm --version
     - run: npx https://github.com/rwoll/where-am-i-executing.git
