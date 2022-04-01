@@ -16,3 +16,6 @@ jobs:
     - run: npm --version
     - run: npx --version
     - run: npx https://github.com/rwoll/where-am-i-executing.git
+    - run: npm init -y
+    - run: npm i https://github.com/rwoll/where-am-i-executing.git
+    - run: npx @rwoll/where-am-i-executing
