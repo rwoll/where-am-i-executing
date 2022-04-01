@@ -1,0 +1,17 @@
+name: npx tests
+jobs:
+  npx-tests:
+    name: ${{ matrix.os }} node@${{ matrix.node-version }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node-version: [12, 14, 16]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: node --version
+    - run: npm --version
+    - run: npx git@github.com:rwoll/where-am-i-executing.git
