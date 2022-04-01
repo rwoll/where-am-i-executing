@@ -1,4 +1,5 @@
 name: npx tests
+on: [push]
 jobs:
   npx-tests:
     name: ${{ matrix.os }} node@${{ matrix.node-version }}
