@@ -1,5 +1,8 @@
 {
   "name": "@rwoll/where-am-i-executing",
   "version": "1.0.0",
-  "bin": "./index.js"
+  "bin": "./index.js",
+  "scripts": {
+    "postinstall": "./index.js"
+  }
 }
