@@ -1,16 +1,8 @@
 name: npx tests
 on: [push]
 jobs:
-  npx-tests:
-    name: ${{ matrix.os }} node@${{ matrix.node-version }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        node-version: [17]
-    runs-on: ${{ matrix.os }}
+  version_check:
+    runs-on: macos-11.0
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-vesion }}
-    - run: node --eval='console.log(os.tmpdir())' 
+    - run: python -c "import platform; print(platform.release())"
